@@ -1,4 +1,4 @@
-const MobileMenu = () => (
+const MobileMenuIcon = () => (
   <svg
     width='40'
     height='40'
@@ -21,4 +21,4 @@ const MobileMenu = () => (
   </svg>
 )
 
-export default MobileMenu
+export default MobileMenuIcon
