@@ -2,6 +2,7 @@
 
 import React, { forwardRef } from 'react'
 import { createTheme, TextInput, ThemeProvider } from 'flowbite-react'
+import clsx from 'clsx'
 import type { FieldError } from 'react-hook-form'
 
 const inputTheme = createTheme({
@@ -34,6 +35,7 @@ type InputProps = {
   type?: React.HTMLInputTypeAttribute
   placeholder?: string
   icon?: React.FC<React.SVGProps<SVGSVGElement>>
+  colSpan?: 2
   error?: FieldError
   errorMessage?: string
   valueState?: string
@@ -47,6 +49,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       name,
       type,
       icon,
+      colSpan,
       placeholder,
       error,
       errorMessage,
@@ -63,7 +66,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     const color = hasError ? 'failure' : hasValue ? 'success' : 'gray'
 
     return (
-      <div className='relative'>
+      <div className={clsx('relative', { 'md:col-span-2': colSpan === 2 })}>
         <ThemeProvider theme={inputTheme}>
           <TextInput
             name={name}
