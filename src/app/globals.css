@@ -3,8 +3,12 @@
 @source "../../.flowbite-react/class-list.json";
 
 :root {
-  --background: #ffffff;
+  --background: #dbdecd;
   --foreground: #171717;
+}
+
+@theme {
+  --color-accent: #fdb80154;
 }
 
 @layer base {
@@ -14,5 +18,19 @@
     font-family: K2D;
     background: var(--background);
     color: var(--foreground);
+  }
+}
+
+@layer utilities {
+  .bg-accent {
+    background-color: var(--color-accent);
+  }
+
+  .text-accent {
+    color: var(--color-accent);
+  }
+
+  .border-accent {
+    border-color: var(--color-accent);
   }
 }
