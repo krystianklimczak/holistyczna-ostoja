@@ -1,18 +1,14 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono } from 'next/font/google'
-
+import { K2D } from 'next/font/google'
 import { AppContext } from '@/context'
 
 import './globals.css'
 
-const geistSans = Geist({
-  variable: '--font-geist-sans',
+const k2d = K2D({
   subsets: ['latin'],
-})
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
+  weight: ['400', '700'],
+  variable: '--font-k2d',
+  //display: 'swap',
 })
 
 export const metadata: Metadata = {
@@ -27,9 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='pl'>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${k2d.variable} antialiased`}>
         <AppContext>
           <div className='relative flex min-h-0 flex-grow flex-col'>
             {children}
